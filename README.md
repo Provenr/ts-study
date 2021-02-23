@@ -1,4 +1,5 @@
 # ts-study
+![image](http://img.provenr.cn/blog/typescript%E7%BC%96%E8%AF%91.png)
 
 ## 目录结构
 - ### package  存放所有的项目和子项目
