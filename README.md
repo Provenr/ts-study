@@ -1,5 +1,10 @@
 # ts-study
 
+## Lerna 是什么
+> A tool for managing JavaScript projects with multiple packages.
+
+Lerna 是一个管理多个 npm 模块的工具，是 Babel 自己用来维护自己的 Monorepo 并开源出的一个项目。优化维护多包的工作流，解决多个包互相依赖，且发布需要手动维护多个包的问题。Lerna 现在已经被很多著名的项目组织使用，如：Babel, React, Vue, Angular, Ember, Meteor, Jest 。
+
 ## 目录结构
 - ### package  存放所有的项目和子项目
 - ### script  存放项目统一的构建、监控脚本
@@ -11,7 +16,7 @@
 
 ## command
 
- 1. 全局安装 lerna；
+ 1. 全局安装[lerna](https://github.com/lerna/lerna)
     ```
     npm install -g lerna
     ```
@@ -75,3 +80,4 @@
     lerna link
     ```
 
+## [精读《Monorepo 的优势》](https://github.com/dt-fe/weekly/issues/151)
