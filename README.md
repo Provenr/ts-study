@@ -1,4 +1,5 @@
 # ts-study
+![image](http://img.provenr.cn/blog/typescript%E7%BC%96%E8%AF%91.png)
 
 ## Lerna 是什么
 > A tool for managing JavaScript projects with multiple packages.
