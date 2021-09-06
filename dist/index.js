@@ -1,37 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var a = { title: "", description: "", completed: false, createdAt: 1, price: 22 };
-var tom = { name: 'Tom', age: 25, gender: 'male' };
-var MyPoint = /** @class */ (function () {
-    function MyPoint() {
+var Cat = /** @class */ (function () {
+    function Cat(type) {
+        this.type = type;
     }
-    return MyPoint;
+    return Cat;
 }());
-var HttpRequestKeyEnum;
-(function (HttpRequestKeyEnum) {
-    HttpRequestKeyEnum[HttpRequestKeyEnum["Accept"] = 0] = "Accept";
-    HttpRequestKeyEnum[HttpRequestKeyEnum["Accept-Charset"] = 1] = "Accept-Charset";
-    HttpRequestKeyEnum[HttpRequestKeyEnum["Accept-Datetime"] = 2] = "Accept-Datetime";
-    HttpRequestKeyEnum[HttpRequestKeyEnum["Accept-Encoding"] = 3] = "Accept-Encoding";
-    HttpRequestKeyEnum[HttpRequestKeyEnum["Accept-Language"] = 4] = "Accept-Language";
-})(HttpRequestKeyEnum || (HttpRequestKeyEnum = {}));
-// = 'Accept' | 'Accept-Charset' | 'Accept-Datetime' |
-//   'Accept-Encoding' | 'Accept-Language'
-// console.log(HttpRequestKey)
-// function getRequestHeaderValue(request: Request, key: HttpRequestKey) {
-//   // ···
-// }
-var data = {
-    value: 123,
-    text: 'text',
-    subData: {
-        value: Promise.resolve()
-    }
-};
-// type Data = {
-//   value: number;
-//   text: string;
-//   subData: {
-//     value: boolean;
-//   };
-// }
+var cat = new Cat(20);
+// const cat = new Cat(20)
+function swip(value) {
+    return [value[1], value[0]];
+}
+console.log(swip(['1', 2])); // [2, '1']
+var p;
+var q;
+var numberArr = [1, 2, '2', true, 4];
+var foo = 123;

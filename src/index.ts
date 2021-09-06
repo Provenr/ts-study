@@ -1,76 +1,52 @@
 import { type } from "node:os";
 
-interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
-  createdAt?: number;
-  [property: string]: string | boolean | number;
-}
-type TodoPreview = Omit<Todo, "title">;
-let a: Todo = { title: "", description: "", completed: false, createdAt: 1, price: 22 }
-
-interface Person {
-  name: string;
-  age?: number;
-  [propName: string]: string | number;
-}
-let tom: Person = { name: 'Tom', age: 25, gender: 'male' };
-
-interface result {
-  code: number;
-  data: object;
-}
-
-interface Point {
-  x: number;
-  y: number;
-  z: number;
-}
-
-class MyPoint implements Point{
-  x: number;
-  y: number;
-  z: number;
-}
 
 
-enum HttpRequestKeyEnum {
-  'Accept',
-  'Accept-Charset',
-  'Accept-Datetime',
-  'Accept-Encoding',
-  'Accept-Language',
-}
-
-type HttpRequestKey = keyof HttpRequestKeyEnum;
-  // = 'Accept' | 'Accept-Charset' | 'Accept-Datetime' |
-  //   'Accept-Encoding' | 'Accept-Language'
-// console.log(HttpRequestKey)
-// function getRequestHeaderValue(request: Request, key: HttpRequestKey) {
-//   // ···
-// }
-
-
-const data = {
-  value: 123,
-  text: 'text',
-  subData: {
-    value: Promise.resolve()
+class Cat<T>{
+  private type: T;
+  constructor(type: T){
+    this.type = type
   }
-};
-
-type Data = typeof data;
-
-// type DateOptional = DeepPar<Data>
-type par<T> = {
-  [P in keyof T]?: T[P]
 }
-type DateOptional = par<Data>
-// type Data = {
-//   value: number;
-//   text: string;
-//   subData: {
-//     value: boolean;
-//   };
-// }
+const cat: Cat<number> = new Cat<number>(20)
+// const cat = new Cat(20)
+
+function swip<T, U>(value: [T, U]): [U, T]{
+  return[value[1], value[0]]
+}
+console.log(swip(['1', 2])) // [2, '1']
+
+interface P {
+  name: string;
+  age: number;
+}
+interface X {
+  c: string;
+  d: string;
+}
+
+type Flatten<T> = T extends Array<any> ? T[number] : T;type Str = Flatten<Array<string>>;
+// type Str = string
+type Num = Flatten<number>;
+// type Num = number
+
+interface Y {
+  c: number;
+  e: string
+}
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
+
+type aar = ReturnType<Y>
+
+type XY = X & Y;
+type YX = Y & X;
+
+type unions = {
+  [p in keyof YX]: YX[p]
+}
+
+let p: XY;
+let q: YX;
+
+let numberArr = [1,2,'2', true,4]
+const foo = 123;
