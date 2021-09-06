@@ -51,3 +51,44 @@ interface People {
   [propName: string]: string | number;
 }
 let tom: People = { name: 'Tom', age: 25, gender: 'male' };
+
+
+interface People1 {
+  name: string;
+  age?: number;
+  say(): String
+}
+
+const getPersonName = (person: People1): void => {
+  console.log(person.name)
+}
+let tom1: People1 = { name: 'Tom', age: 25, say(){return 'hello'}};
+getPersonName(tom1)
+// 直接传入 会对 对象做强校验
+// getPersonName({ name: 'Tom', age: 25, gender: 'male', sex: '男' })
+
+
+// class  使用 接口
+class user1 implements People1 {
+  name: 'tom';
+  say(){return 'ss'}
+}
+
+
+// 继承接口
+
+interface User2 extends People1 {
+  active: boolean;
+}
+let user2: User2 = {
+  name: 'tom',
+  say(){return 'ss'},
+  active: false
+}
+
+// 接口定义函数类型
+interface sayHi {
+  (word: string): string
+}
+
+const sayhi: sayHi = (word: string) => {return word}
